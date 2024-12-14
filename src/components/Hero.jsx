@@ -18,7 +18,7 @@ export default function HeroSection() {
       {/* Background Image */}
       <div className="absolute inset-0 -z-10">
         <img
-          src="public/logo2.jpg" // Ensure the image path is correct
+          src="/logo2.jpg" // Ensure the image path is correct
           alt="Gadget Rentals"
           className="w-full h-full object-cover"
         />
