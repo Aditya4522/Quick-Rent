@@ -3,12 +3,12 @@ import React, { useState } from "react";
 export default function HeroSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Function to open modal
+  
   const openModal = () => {
     setIsModalOpen(true);
   };
 
-  // Function to close modal
+  
   const closeModal = () => {
     setIsModalOpen(false);
   };
@@ -18,7 +18,7 @@ export default function HeroSection() {
       {/* Background Image */}
       <div className="absolute inset-0 -z-10">
         <img
-          src="/logo2.jpg" // Ensure the image path is correct
+          src="/logo2.jpg" 
           alt="Gadget Rentals"
           className="w-full h-full object-cover"
         />
@@ -34,7 +34,7 @@ export default function HeroSection() {
           today and experience the future.
         </p>
 
-        {/* Call-to-Action Button */}
+        
         <button
           onClick={openModal}
           className="inline-block px-8 py-3 bg-black text-white text-lg rounded-full font-medium transition duration-300 hover:bg-gray-800"

@@ -18,7 +18,10 @@ export default function FeatureSection() {
             <div key={index} className="p-6 bg-white rounded-lg shadow-lg">
               <div className="text-4xl mb-4">{feature.icon}</div>
               <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
-              <p>Discover how QuickRent can make renting easier and more convenient.</p>
+              <p>
+                Discover how QuickRent can make renting easier and more
+                convenient.
+              </p>
             </div>
           ))}
         </div>

@@ -51,7 +51,7 @@ export default function GadgetListing() {
                   <li key={index}>{feature}</li>
                 ))}
               </ul>
-              {/* Rent Now Button */}
+             
               <button className="px-4 py-2 bg-black text-white rounded-full hover:bg-gray-800">
                 Rent Now
               </button>

@@ -3,23 +3,23 @@ import React, { useState } from "react";
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [formType, setFormType] = useState(""); // To track which form to show (sign up or login)
+  const [formType, setFormType] = useState(""); 
 
   // Function to handle menu toggle
   const handleMenuToggle = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // Function to open modal with form type (sign up or login)
+  
   const openModal = (type) => {
     setFormType(type);
     setIsModalOpen(true);
   };
 
-  // Function to close modal
+ 
   const closeModal = () => {
     setIsModalOpen(false);
-    setFormType(""); // Clear form type
+    setFormType(""); 
   };
 
   return (
@@ -31,7 +31,7 @@ export default function Navbar() {
           <span className="text-xl font-bold text-gray-800">QuickRent</span>
         </div>
 
-        {/* Desktop Navigation Links */}
+     
         <div className="hidden md:flex space-x-4">
           <a
             className="text-[18px] border-2 border-black text-black rounded-full px-4 py-2 hover:bg-black hover:text-white font-medium transition duration-200"
@@ -67,13 +67,13 @@ export default function Navbar() {
           <div className=" absolute gap-2 top-16 left-0 w-full bg-white p-5 shadow-md flex justify-center   flex-col items-center md:hidden  z-10">
             <a
               className="text-[18px] border-2 border-black text-black rounded-full px-4 py-2 hover:bg-black hover:text-white font-medium transition duration-200"
-              onClick={() => openModal("signup")} // Open sign up modal
+              onClick={() => openModal("signup")} 
             >
               Sign Up
             </a>
             <a
               className="text-[18px] border-2 border-black text-black rounded-full px-4 py-2 hover:bg-black hover:text-white font-medium transition duration-200"
-              onClick={() => openModal("login")} // Open login modal
+              onClick={() => openModal("login")} 
             >
               Login
             </a>
@@ -81,7 +81,7 @@ export default function Navbar() {
         )}
       </nav>
 
-      {/* Modal for Sign Up / Login */}
+      
       {isModalOpen && (
   <div className="fixed   inset-0 bg-gray-600 bg-opacity-75 flex items-center justify-center z-50">
     <div className=" max-w-2xl bg-white p-8 rounded-lg shadow-lg w-full md:max-w-[300px]  ">
@@ -89,7 +89,7 @@ export default function Navbar() {
         {formType === "signup" ? "Sign Up" : "Login"}
       </h2>
       <form className="space-y-4 order-1">
-        {/* Basic Form Fields */}
+      
         <input
           type="email"
           placeholder="Email"
