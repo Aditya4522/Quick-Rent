@@ -1,4 +1,34 @@
+import { useState } from "react";
+
 const ContactUs = () => {
+  // State for form inputs
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  // Handle input changes
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleForm = (e) => {
+    e.preventDefault();
+    console.log(formData); // Logs the state data as an object
+    alert("Form submitted successfully!");
+    // Reset form data
+    setFormData({
+      name: "",
+      email: "",
+      message: "",
+    });
+  };
+
   return (
     <section id="contact" className="py-16 bg-gray-100">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -14,8 +44,7 @@ const ContactUs = () => {
           {/* Contact Form */}
           <form
             className="bg-black text-white p-8 rounded-lg shadow-xl transition-transform transform hover:scale-105 duration-300"
-            action="#"
-            method="POST"
+            onSubmit={handleForm}
           >
             <div className="mb-6">
               <label
@@ -28,6 +57,8 @@ const ContactUs = () => {
                 type="text"
                 id="name"
                 name="name"
+                value={formData.name}
+                onChange={handleInputChange}
                 required
                 className="mt-2 block w-full p-4 border-2 text-black border-gray-300 rounded-lg shadow-sm focus:ring-[var(--main-color)] focus:border-[var(--main-color)] focus:outline-none transition-all"
                 placeholder="Enter your name"
@@ -44,6 +75,8 @@ const ContactUs = () => {
                 type="email"
                 id="email"
                 name="email"
+                value={formData.email}
+                onChange={handleInputChange}
                 required
                 className="mt-2 block w-full p-4 border-2 text-black border-gray-300 rounded-lg shadow-sm focus:ring-[var(--main-color)] focus:border-[var(--main-color)] focus:outline-none transition-all"
                 placeholder="Enter your email"
@@ -59,6 +92,8 @@ const ContactUs = () => {
               <textarea
                 id="message"
                 name="message"
+                value={formData.message}
+                onChange={handleInputChange}
                 required
                 rows="5"
                 className="mt-2 block w-full p-4 text-black border-2 border-gray-300 rounded-lg shadow-sm focus:ring-[var(--main-color)] focus:border-[var(--main-color)] focus:outline-none transition-all"
@@ -67,7 +102,7 @@ const ContactUs = () => {
             </div>
             <button
               type="submit"
-              className="w-full py-3 px-4 bg-[var(--main-color)] border border-white  font-semibold rounded-lg shadow-md hover:bg-[var(--hover-color)] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--main-color)] active:scale-95"
+              className="w-full py-3 px-4 bg-[var(--main-color)] border border-white font-semibold rounded-lg shadow-md hover:bg-[var(--hover-color)] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--main-color)] active:scale-95"
             >
               Send Message
             </button>
